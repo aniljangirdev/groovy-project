@@ -1,0 +1,17 @@
+FROM groovy
+
+CMD ["groovysh"]
+
+ENV GROOVY_HOME /opt/groovy
+
+VOLUME /home/groovy/.groovy/grapes
+
+WORKDIR /home/groovy
+
+ENV GROOVY_VERSION 4.0.21
+
+USER 1000:1000
+
+RUN set -o errexit -o nounset \
+    && echo "Testing Groovy installation" \
+    && groovy --version

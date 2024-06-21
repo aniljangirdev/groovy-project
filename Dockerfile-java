@@ -1,0 +1,12 @@
+FROM amazoncorretto:17
+
+CMD ["groovysh"]
+
+ENV GROOVY_HOME /opt/groovy
+
+VOLUME /home/groovy/.groovy/grapes
+
+WORKDIR /home/groovy
+
+RUN set echo "Testing Groovy installation" \
+    && groovy --version
